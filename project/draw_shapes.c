@@ -9,6 +9,14 @@ shape rect3;
 
 u_int background_color = COLOR_BLUE;
 
+int shape1_x = 10;
+int shape1_y = 5;
+int shape2_x = 10;
+int shape2_y = 5;
+int shape3_x = 10;
+int shape3_y = 5;
+
+
 void
 shape1(int x, int y, int color){
   fillRectangle((x-10),(y), 10, 30, color);
@@ -25,8 +33,8 @@ shape3(int x, int y, int color){
   fillRectangle((x-10),(y), 40, 10, color);
   fillRectangle((x+5),(y-15), 10, 20, color);
 }
-void
 
+void
 init_shapes(void)
 {
   // vars for the rectangle
@@ -37,12 +45,12 @@ init_shapes(void)
 
   rect2.rect_row = 10;
   rect2.rect_col = screenWidth / 2;
-  rect2.old_rect_row = 20;
+  rect2.old_rect_row = 10;
   rect2.old_rect_col = screenWidth / 2;
 
   rect3.rect_row = 80;
   rect3.rect_col = screenWidth / 2;
-  rect3.old_rect_row = 120;
+  rect3.old_rect_row = 80;
   rect3.old_rect_col = screenWidth / 2;
 
 }
@@ -87,8 +95,8 @@ draw_moving_shapes3(void)
 void
 movingshape(shape *to_draw)
 {
-  int shape1_x = 10;
-  int shape1_y = 5;
+  //int shape1_x = 10;
+  //int shape1_y = 5;
 
   int left_col = to_draw->rect_col;
   int top_row  = to_draw->rect_row;
@@ -127,15 +135,15 @@ movingshape(shape *to_draw)
 void
 movingshape2(shape *to_draw)
 {
-  int shape2_x = 10;
-  int shape2_y = 5;
+  //int shape2_x = 10;
+  //int shape2_y = 5;
 
   int left_col = to_draw->rect_col;
   int top_row  = to_draw->rect_row;
 
   unsigned int blue = 16, green = 0, red = 31;
 
-  unsigned int color = (blue << 30) | (green << 5) | red;
+  unsigned int color = (blue << 11) | (green << 5) | red;
   // draw rectangle at current position
   shape2(left_col, top_row, color);
   
@@ -168,8 +176,8 @@ movingshape2(shape *to_draw)
 void
 movingshape1(shape *to_draw)
 {
-  int shape3_x = 10;
-  int shape3_y = 5;
+  //int shape3_x = 10;
+  //int shape3_y = 5;
 
   int left_col = to_draw->rect_col;
   int top_row  = to_draw->rect_row;

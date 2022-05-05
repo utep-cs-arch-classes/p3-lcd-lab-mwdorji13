@@ -29,7 +29,7 @@ void main()
     if (redraw_Screen){
       redraw_Screen = 0;
       //clearScreen(COLOR_BLUE);
-      // switch_interrupt_handler();
+      switch_interrupt_handler();
     }
   }
 }

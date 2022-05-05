@@ -39,6 +39,7 @@ switch_interrupt_handler(void)
   switch4_down = (p2val & SW4) ? 0 : 1;
   if(switch1_down){
     state = 0;
+    shape1_limit -= 10;
   }
   if(switch2_down){
     state = 1;

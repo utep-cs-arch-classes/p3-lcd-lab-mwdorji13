@@ -8,6 +8,10 @@
 
 int state = 0;
 
+int shape1_limit = 250;
+int shape2_limit = 150;
+int shape3_limit = 100;
+
 u_int backgroundColor = COLOR_BLUE;
 
 void update_state()
@@ -27,12 +31,40 @@ void update_state()
     break;
   }
 }
+
+void button1_logic()
+{
+  int count = 0;
+  if(shape1_limit <= 0) {
+    shape1_limit = 250;
+  }
+  
+  count++;
+  if(count >= shape1_limit){
+    count = 0;
+    draw_moving_shapes();
+  }
+}
+
 void but1()
 {
-   
-  //draw_moving_shapes();
-   buzzer_set_period(500);
-   drawChar5x7(20, screenWidth/2, '1',COLOR_BLACK, backgroundColor);
+  buzzer_set_period(500);
+  drawChar5x7(20, screenWidth/2, '1',COLOR_BLACK, backgroundColor);
+}
+
+void button2_logic()
+{
+  int count = 0;
+  if(shape2_limit <= 0) {
+    shape2_limit = 250;
+  }
+  
+  count++;
+  if(count >= shape2_limit){
+    count = 0;
+    //draw_moving_shapes();
+    draw_moving_shapes2();
+  }
 }
 
 void but2()
@@ -42,6 +74,22 @@ void but2()
     buzzer_set_period(1000);
     drawChar5x7(20, screenWidth/2, '2',COLOR_BLACK, backgroundColor);
 }
+void button3_logic()
+{
+  int count = 0;
+  if(shape3_limit <= 0) {
+    shape3_limit = 250;
+  }
+  
+  count++;
+  if(count >= shape3_limit){
+    count = 0;
+    //draw_moving_shapes();
+    //draw_moving_shapes2();
+    draw_moving_shapes3();
+  }
+}
+
 void but3()
 {
   //draw_moving_shapes();
