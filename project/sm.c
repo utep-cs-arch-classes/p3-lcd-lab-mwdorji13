@@ -13,8 +13,8 @@ int shape2_limit = 150;
 int shape3_limit = 100;
 
 u_int backgroundColor = COLOR_BLUE;
-
-void update_state()
+//Turning this into assembly
+/*void update_state()
 {
   switch(state){
   case 0:
@@ -31,10 +31,11 @@ void update_state()
     break;
   }
 }
+*/
 
 void button1_logic()
 {
-  int count = 0;
+  static int count = 0;
   if(shape1_limit <= 0) {
     shape1_limit = 250;
   }
@@ -54,7 +55,7 @@ void but1()
 
 void button2_logic()
 {
-  int count = 0;
+  static int count = 0;
   if(shape2_limit <= 0) {
     shape2_limit = 250;
   }
@@ -76,7 +77,7 @@ void but2()
 }
 void button3_logic()
 {
-  int count = 0;
+  static int count = 0;
   if(shape3_limit <= 0) {
     shape3_limit = 250;
   }

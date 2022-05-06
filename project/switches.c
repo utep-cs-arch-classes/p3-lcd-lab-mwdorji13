@@ -43,12 +43,19 @@ switch_interrupt_handler(void)
   }
   if(switch2_down){
     state = 1;
+    shape2_limit -= 15;
   }
   if(switch3_down){
     state = 2;
+    shape3_limit -= 20;
   }
   if(switch4_down){
     state = 3;
+    shape1_limit = 250;
+    shape2_limit = 250;
+    shape3_limit = 250;
+
+
   }
   update_state();
 
